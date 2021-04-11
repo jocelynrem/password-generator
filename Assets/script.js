@@ -7,6 +7,27 @@ var number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 var specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '/', '?']
 
 function generatePassword() {
+  var finalArray = alpha
+  var length = prompt('How many characters do you want your passwod to be? Enter a number 8-120')
+
+  var upperCase = confirm("Do you want to include uppercase letters?")
+  if(upperCase) {
+    finalArray = finalArray.concat(alphaUpcase)
+  }
+
+  var numbers = confirm('Do you want to include numbers?')
+  if(numbers) {
+    finalArray = finalArray.concat(number)
+  }
+
+  var sCharacters = confirm('Do you want to include special characters?')
+  if(sCharacters) {
+    finalArray = finalArray.concat(specialCharacters)
+  }
+
+  
+
+
   return 'yourpassword';
 }
 

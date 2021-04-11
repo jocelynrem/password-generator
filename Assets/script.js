@@ -9,6 +9,8 @@ let specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', 
 function generatePassword() {
   let totalCharacters = alpha;
   let passwordLength = prompt('How many characters do you want your passwod to be? Enter a number 8-120');
+  let yourPassword = [];
+  let finalArray = [];
 
   let upperCase = confirm("Do you want to include uppercase letters?");
   if(upperCase) {
@@ -26,15 +28,25 @@ function generatePassword() {
   };
 
   console.log(totalCharacters);
-  // while (yourPassword <= passwordLength) {
 
-  // }
-  //   finalArray[Math.floor(Math.random()*answer.length)];
+  while (passwordLength >= finalArray.length) {
+    finalArray.push(totalCharacters[Math.floor(Math.random()*totalCharacters.length)]);
+  }
+  
+  yourPassword = finalArray.join();
+  return console.log(yourPassword)
+}
 
 
+// if (passwordLength >= finalArray.length) {
+//   finalArray = totalCharacters[Math.floor(Math.random()*totalCharacters.length)];
+// } else {
+//   yourPassword = finalArray.toString();
+// }
+// console.log(yourPassword)
 
   // return 'yourpassword';
-}
+
 
 // Write password to the #password input
 function writePassword() {

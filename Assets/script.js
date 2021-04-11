@@ -34,18 +34,8 @@ function generatePassword() {
   }
   
   yourPassword = finalArray.join();
-  return console.log(yourPassword)
+  return yourPassword
 }
-
-
-// if (passwordLength >= finalArray.length) {
-//   finalArray = totalCharacters[Math.floor(Math.random()*totalCharacters.length)];
-// } else {
-//   yourPassword = finalArray.toString();
-// }
-// console.log(yourPassword)
-
-  // return 'yourpassword';
 
 
 // Write password to the #password input

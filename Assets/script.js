@@ -1,34 +1,39 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+let generateBtn = document.querySelector("#generate");
 
-var alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-var alphaUpcase = alpha.toUppercase()
-var number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-var specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '/', '?']
+let alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+let alphaUpcase = alpha.join('$$').toUpperCase().split('$$');
+let number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+let specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '/', '?']
 
 function generatePassword() {
-  var finalArray = alpha
-  var length = prompt('How many characters do you want your passwod to be? Enter a number 8-120')
+  let totalCharacters = alpha;
+  let passwordLength = prompt('How many characters do you want your passwod to be? Enter a number 8-120');
 
-  var upperCase = confirm("Do you want to include uppercase letters?")
+  let upperCase = confirm("Do you want to include uppercase letters?");
   if(upperCase) {
-    finalArray = finalArray.concat(alphaUpcase)
-  }
+    totalCharacters = totalCharacters.concat(alphaUpcase)
+  };
 
-  var numbers = confirm('Do you want to include numbers?')
+  let numbers = confirm('Do you want to include numbers?');
   if(numbers) {
-    finalArray = finalArray.concat(number)
-  }
+    totalCharacters = totalCharacters.concat(number)
+  };
 
-  var sCharacters = confirm('Do you want to include special characters?')
+  let sCharacters = confirm('Do you want to include special characters?');
   if(sCharacters) {
-    finalArray = finalArray.concat(specialCharacters)
-  }
+    totalCharacters = totalCharacters.concat(specialCharacters)
+  };
 
-  
+  console.log(totalCharacters);
+  // while (yourPassword <= passwordLength) {
+
+  // }
+  //   finalArray[Math.floor(Math.random()*answer.length)];
 
 
-  return 'yourpassword';
+
+  // return 'yourpassword';
 }
 
 // Write password to the #password input

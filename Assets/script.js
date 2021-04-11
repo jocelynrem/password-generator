@@ -1,16 +1,20 @@
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
 
+
+// Declares Possible password characters
 let alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 let alphaUpcase = alpha.join('$$').toUpperCase().split('$$');
 let number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 let specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '/', '?']
 
+//Function that genenerates the password
 function generatePassword() {
   let totalCharacters = alpha;
   let passwordLength = prompt('How many characters do you want your passwod to be? Enter a number 8-120');
   let yourPassword = [];
   let finalArray = [];
+  let separator = "";
 
   let upperCase = confirm("Do you want to include uppercase letters?");
   if(upperCase) {
@@ -33,10 +37,9 @@ function generatePassword() {
     finalArray.push(totalCharacters[Math.floor(Math.random()*totalCharacters.length)]);
   }
   
-  yourPassword = finalArray.join();
+  yourPassword = finalArray.join(separator);
   return yourPassword
 }
-
 
 // Write password to the #password input
 function writePassword() {

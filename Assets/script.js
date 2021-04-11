@@ -11,34 +11,36 @@ let specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', 
 //Function that genenerates the password
 function generatePassword() {
   let totalCharacters = alpha;
-  let passwordLength = prompt('How many characters do you want your passwod to be? Enter a number 8-120');
   let yourPassword = [];
   let finalArray = [];
   let separator = "";
-
-  let upperCase = confirm("Do you want to include uppercase letters?");
-  if(upperCase) {
-    totalCharacters = totalCharacters.concat(alphaUpcase)
-  };
-
-  let numbers = confirm('Do you want to include numbers?');
-  if(numbers) {
-    totalCharacters = totalCharacters.concat(number)
-  };
-
-  let sCharacters = confirm('Do you want to include special characters?');
-  if(sCharacters) {
-    totalCharacters = totalCharacters.concat(specialCharacters)
-  };
-
-  console.log(totalCharacters);
-
-  while (passwordLength >= finalArray.length) {
-    finalArray.push(totalCharacters[Math.floor(Math.random()*totalCharacters.length)]);
-  }
   
-  yourPassword = finalArray.join(separator);
-  return yourPassword
+  let passwordLength = prompt('How many characters do you want your passwod to be? Enter a number 5-120');
+  if (passwordLength < 5 || passwordLength > 120 || isNaN) {
+    alert('That is not a valid number')
+  } else {
+      let upperCase = confirm("Do you want to include uppercase letters?");
+      if(upperCase) {
+        totalCharacters = totalCharacters.concat(alphaUpcase)
+      };
+
+      let numbers = confirm('Do you want to include numbers?');
+      if(numbers) {
+        totalCharacters = totalCharacters.concat(number)
+      };
+
+      let sCharacters = confirm('Do you want to include special characters?');
+      if(sCharacters) {
+        totalCharacters = totalCharacters.concat(specialCharacters)
+      };
+
+      while (passwordLength >= finalArray.length) {
+        finalArray.push(totalCharacters[Math.floor(Math.random()*totalCharacters.length)]);
+      }
+      
+      yourPassword = finalArray.join(separator);
+      return yourPassword
+    }
 }
 
 // Write password to the #password input

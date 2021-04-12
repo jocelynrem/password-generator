@@ -10,15 +10,16 @@ let specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', 
 
 //Function that genenerates the password
 function generatePassword() {
-  let totalCharacters = alpha;
   let yourPassword = [];
   let finalArray = [];
   let separator = "";
   
   let passwordLength = prompt('How many characters do you want your passwod to be? Enter a number 5-120');
-  if (passwordLength < 5 || passwordLength > 120 || isNaN) {
+
+  if (passwordLength <= 5 || passwordLength >= 120 || isNaN(passwordLength)) {
     alert('That is not a valid number')
   } else {
+      let totalCharacters = alpha;
       let upperCase = confirm("Do you want to include uppercase letters?");
       if(upperCase) {
         totalCharacters = totalCharacters.concat(alphaUpcase)

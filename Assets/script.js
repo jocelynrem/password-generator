@@ -14,12 +14,18 @@ function generatePassword() {
   let finalArray = [];
   let separator = "";
   
-  let passwordLength = prompt('How many characters do you want your passwod to be? Enter a number 5-120');
+  let passwordLength = prompt('How many characters do you want your passwod to be? Enter a number 8-128');
 
-  if (passwordLength <= 5 || passwordLength >= 120 || isNaN(passwordLength)) {
+  if (passwordLength <= 8 || passwordLength >= 128 || isNaN(passwordLength)) {
     alert('That is not a valid number')
   } else {
-      let totalCharacters = alpha;
+      let totalCharacters;
+
+      let lowerCase = confirm("Do you want to include lowercase letters?");
+      if(lowerCase) {
+        totalCharacters = totalCharacters = alpha
+      };
+
       let upperCase = confirm("Do you want to include uppercase letters?");
       if(upperCase) {
         totalCharacters = totalCharacters.concat(alphaUpcase)
@@ -35,6 +41,10 @@ function generatePassword() {
         totalCharacters = totalCharacters.concat(specialCharacters)
       };
 
+      if (totalCharacters === undefined) {
+        return alert('You must choose at least one password criteria. Press Generate Password to try again.');
+      }
+        
       while (passwordLength >= finalArray.length) {
         finalArray.push(totalCharacters[Math.floor(Math.random()*totalCharacters.length)]);
       }

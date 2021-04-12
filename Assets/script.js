@@ -23,7 +23,7 @@ function generatePassword() {
 
       let lowerCase = confirm("Do you want to include lowercase letters?");
       if(lowerCase) {
-        totalCharacters = totalCharacters = alpha
+        totalCharacters = alpha
       };
 
       let upperCase = confirm("Do you want to include uppercase letters?");

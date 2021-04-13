@@ -6,7 +6,7 @@ let generateBtn = document.querySelector("#generate");
 let alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 let alphaUpcase = alpha.join('$$').toUpperCase().split('$$');
 let number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-let specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '/', '?']
+let specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '/', '?' '[', ']', ' ', '{', '}', '|', '`', '~', '=', '+', ';', ':']
 
 //Function that genenerates the password
 function generatePassword() {
@@ -21,22 +21,22 @@ function generatePassword() {
   } else {
       let totalCharacters;
 
-      let lowerCase = confirm("Do you want to include lowercase letters?");
+      let lowerCase = confirm("Do you want to include lowercase letters in your password?");
       if(lowerCase) {
         totalCharacters = alpha
       };
 
-      let upperCase = confirm("Do you want to include uppercase letters?");
+      let upperCase = confirm("Do you want to include uppercase letters in your password?");
       if(upperCase) {
         totalCharacters = totalCharacters.concat(alphaUpcase)
       };
 
-      let numbers = confirm('Do you want to include numbers?');
+      let numbers = confirm('Do you want to include numbers in your password?');
       if(numbers) {
         totalCharacters = totalCharacters.concat(number)
       };
 
-      let sCharacters = confirm('Do you want to include special characters?');
+      let sCharacters = confirm('Do you want to include special characters in your password?');
       if(sCharacters) {
         totalCharacters = totalCharacters.concat(specialCharacters)
       };

@@ -16,7 +16,7 @@ function generatePassword() {
   
   let passwordLength = prompt('How many characters do you want your passwod to be? Enter a number 8-128');
 
-  if (passwordLength <= 8 || passwordLength >= 128 || isNaN(passwordLength)) {
+  if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     alert('That is not a valid number')
   } else {
       let totalCharacters;

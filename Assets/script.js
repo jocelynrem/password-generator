@@ -1,12 +1,12 @@
 // Assignment Code
-let generateBtn = document.querySelector("#generate");
+const generateBtn = document.querySelector("#generate");
 
 
 // Declares Possible password characters
-let alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-let alphaUpcase = alpha.join('$$').toUpperCase().split('$$');
-let number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-let specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '/', '?', ']', ' ', '{', '}', '|', '`', '~', '=', '+', ';', ':'];
+const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+const alphaUpcase = alpha.join('$$').toUpperCase().split('$$');
+const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+const specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '/', '?', ']', ' ', '{', '}', '|', '`', '~', '=', '+', ';', ':'];
 
 //Function that genenerates the password
 function generatePassword() {
@@ -23,21 +23,29 @@ function generatePassword() {
 
       let lowerCase = confirm("Do you want to include lowercase letters in your password?");
       if(lowerCase) {
+        finalArray.push(alpha[Math.floor(Math.random()*alpha.length)]);
+        console.log('finalArray:', finalArray)
         totalCharacters = alpha
       };
 
       let upperCase = confirm("Do you want to include uppercase letters in your password?");
       if(upperCase) {
+        finalArray.push(alphaUpcase[Math.floor(Math.random()*alphaUpcase.length)]);
+        console.log('finalArray:', finalArray)
         totalCharacters = totalCharacters.concat(alphaUpcase)
       };
 
       let numbers = confirm('Do you want to include numbers in your password?');
       if(numbers) {
+        finalArray.push(number[Math.floor(Math.random()*number.length)]);
+        console.log('finalArray:', finalArray)
         totalCharacters = totalCharacters.concat(number)
       };
 
       let sCharacters = confirm('Do you want to include special characters in your password?');
       if(sCharacters) {
+        finalArray.push(specialCharacters[Math.floor(Math.random()*specialCharacters.length)]);
+        console.log('finalArray:', finalArray)
         totalCharacters = totalCharacters.concat(specialCharacters)
       };
 
@@ -55,7 +63,7 @@ function generatePassword() {
 }
 
 // Write password to the #password input
-function writePassword() {
+  function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 

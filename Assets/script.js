@@ -24,28 +24,24 @@ function generatePassword() {
       let lowerCase = confirm("Do you want to include lowercase letters in your password?");
       if(lowerCase) {
         finalArray.push(alpha[Math.floor(Math.random()*alpha.length)]);
-        console.log('finalArray:', finalArray)
         totalCharacters = alpha
       };
 
       let upperCase = confirm("Do you want to include uppercase letters in your password?");
       if(upperCase) {
         finalArray.push(alphaUpcase[Math.floor(Math.random()*alphaUpcase.length)]);
-        console.log('finalArray:', finalArray)
         totalCharacters = totalCharacters.concat(alphaUpcase)
       };
 
       let numbers = confirm('Do you want to include numbers in your password?');
       if(numbers) {
         finalArray.push(number[Math.floor(Math.random()*number.length)]);
-        console.log('finalArray:', finalArray)
         totalCharacters = totalCharacters.concat(number)
       };
 
       let sCharacters = confirm('Do you want to include special characters in your password?');
       if(sCharacters) {
         finalArray.push(specialCharacters[Math.floor(Math.random()*specialCharacters.length)]);
-        console.log('finalArray:', finalArray)
         totalCharacters = totalCharacters.concat(specialCharacters)
       };
 
